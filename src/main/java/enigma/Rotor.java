@@ -16,6 +16,7 @@ public class Rotor {
         position = posn;
     }
     
+    //Creer un rotor a partir de deux phrases de configuration.
 	public static Rotor rotorFactory(String str, String notches){
 		char[] s = str.trim().replace(" ", "").toCharArray();
 		int[] cipher = new int[26];
