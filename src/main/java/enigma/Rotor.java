@@ -32,6 +32,7 @@ public class Rotor {
 		
 	}
 	
+	//Constructeurs de rotor, initailise les variables membres
 	Rotor(int[] c, int notch1, int notch2) {
 		this.notch1 = notch1;
 		this.notch2 = notch2;
@@ -45,14 +46,17 @@ public class Rotor {
 		createBCipher();
 	}
 
+	//Permet de traverser le rotor vers le reflector
     public int convertForward(int p) {
         return ((cipher[((p+position)%26+26)%26]-position)%26+26)%26;
     }
-
+    
+    //Permet de traverser le rotor vers l'exterieur
     public int convertBackward(int e) {
         return ((bcipher[((e+position)%26+26)%26]-position)%26+26)%26;
     }
     
+    //Fais tourner le rotor (sans jamais depasser 25)
     public void advance() {
         position = (position+1) % 26;
     }

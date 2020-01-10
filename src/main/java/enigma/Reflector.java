@@ -3,6 +3,8 @@ package enigma;
 /** Class that represents a reflector in the enigma.
  *  @author
  */
+
+//Le reflecteur est un rotor, sans backward possible
 public class Reflector extends Rotor {
 	
 	int[] reflection;
@@ -20,7 +22,7 @@ public class Reflector extends Rotor {
 		super(r,0);
 		reflection = r;
 	}
-        
+    
     public int convertForward(int p) {
         return ((reflection[((p)%26+26)%26])%26+26)%26;
     }

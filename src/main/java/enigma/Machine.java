@@ -14,6 +14,7 @@ public class Machine {
 		rightRotor = right;
 	}
 
+	//Initialise les positions des rotor, à partir d'un String de configuration
 	public void setPositions(String setting) {
 		char[] charSettings = setting.toCharArray();
 		reflector.setPosition(Rotor.toIndex(charSettings[0]));
@@ -38,6 +39,7 @@ public class Machine {
 		return result;
 	}
 
+	//Convertis un charactère, en le faisant trvaerser les rotors (Forward) et en le faisant revenir (Backward)
 	char convertChar(char c) {
 		advanceRotors();
 		int charIndex = Rotor.toIndex(c);
@@ -53,6 +55,7 @@ public class Machine {
 
 	}
 
+	//Fais tourner les rotors lorsqu'un notch est atteind
 	void advanceRotors() {
 		boolean advanceLeft = false;
 		boolean advanceMiddle = false;
